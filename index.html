@@ -68,17 +68,21 @@
             <button type="submit" class="btn btn-default">Submit</button>
             </form>
           -->
-
-          <ul class="nav navbar-nav navbar-right">
-              <li><p class="navbar-text">1.1. - 31.12.2017</p></li>
-          </ul>
+          <p class="navbar-text navbar-right">1.1. - 31.12.2017</p>
         </div>
 
       </div>
     </nav>
 
     <div class="container">
+
       <div class="row content">
+        <div class="col-sm-12">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Hae lintu tai paikka..." title="Kirjoita linnun tai paikan nimi...">
+        </div>
+      </div>
+      <br />
+      <div class="row content" id="birds">
         <div class="col-sm-4 text-left">
           <ul class="list-group">
             <li class="list-group-item">kyhmyjoutsen</li>
@@ -252,6 +256,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, div, li, a, i, bird;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        div = document.getElementById("birds");
+        li = div.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            bird = li[i].textContent;
+            if (bird.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
 
   </body>
 
