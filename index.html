@@ -78,7 +78,10 @@
 
       <div class="row content">
         <div class="col-sm-12">
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Hae lintu tai paikka..." title="Kirjoita linnun tai paikan nimi...">
+          <span>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Hae lintu tai paikka..." title="Kirjoita linnun tai paikan nimi...">
+          </span>
+          <span id="seenCount"></span>
         </div>
       </div>
       <br />
@@ -276,6 +279,17 @@
             }
         }
     }
+
+    function countSeen() {
+      var count;
+      count = document.querySelectorAll('#birds .seen').length;
+      //console.log('Count is: ' + count);
+      document.getElementById("seenCount").textContent="Bongattu " + count + "/100";
+    }
+
+    window.onload = function() {
+      countSeen();
+    };
     </script>
 
 
