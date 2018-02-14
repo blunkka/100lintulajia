@@ -1,3 +1,3 @@
 # 100lintulajia
 
-static site. View gh-pages branch
+static site (http://www.akiblomqvist.fi/100lintulajia/). View gh-pages branch
